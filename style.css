@@ -81,10 +81,14 @@ nav.scrolled { box-shadow: var(--shadow); }
   align-items: center;
 }
 
+
+
+
+
 .nav-links a {
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--text-soft);
+  color: #48414a;  
   text-decoration: none;
   transition: color 0.2s;
   letter-spacing: 0.03em;
@@ -235,7 +239,7 @@ nav.scrolled { box-shadow: var(--shadow); }
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  background: linear-gradient(135deg, var(--lavender-deep), var(--pink-deep));
+  background: linear-gradient(90deg, #a084dd, #fe96ad);
   color: #fff;
   border: none;
   padding: 1rem 2.4rem;
