@@ -60,7 +60,7 @@ const PRODUCT_NAMES = {
   'Gifts': ['Personalized Name Keychain', 'Mini Flower Bouquet', 'Heart Charm Bracelet', 'Birthday Gift Basket', 'Crochet Coaster Set'],
   'Bags': ['Boho Tote Bag', 'Mini Sling Purse', 'Granny Square Tote', 'Market Basket Bag', 'Pastel Crossbody Bag'],
   'Home Decor': ['Macrame Wall Hanging', 'Boho Table Runner', 'Coaster Set of Four', 'Hanging Planter Basket', 'Doily Centerpiece'],
-  'Accessories': ['Flower Hair Clip Set', 'Pearl Headband', 'Crochet Bucket Hat', 'Boho Anklet', 'Scrunchie Trio Pack']
+  'Accessories': ['Flower Hair Clip Set', 'Pearl Headband', 'Crochet Bucket Hat', 'Boho Anklet', 'Scrunchie Trio Pack', 'Boho Choker Necklace']
 };
 
 function slugify(str) {
