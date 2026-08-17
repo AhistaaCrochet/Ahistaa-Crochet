@@ -25,6 +25,88 @@
 <body>
 
   <!-- ═══════════════════════════════════════
+       PRE-LOAD INTRO SCREEN
+       (Self-contained: its own styles + script.
+       Does not touch style.css / script.js.
+       Shows a countdown, then fades out to
+       reveal the existing site underneath.)
+       ═══════════════════════════════════════ -->
+  <style>
+    #preloadIntroOverlay{
+      position:fixed; inset:0; z-index:99999;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(160deg,#efe6fb 0%,#c9b8e8 55%,#b7a3dd 100%);
+      text-align:center; padding:1.5rem;
+      transition:opacity .6s ease, visibility .6s ease;
+      opacity:1; visibility:visible;
+    }
+    #preloadIntroOverlay.preload-hide{ opacity:0; visibility:hidden; pointer-events:none; }
+    #preloadIntroOverlay .preload-intro-inner{
+      max-width:480px; width:100%;
+      font-family:'DM Sans', sans-serif; color:#3d3350;
+    }
+    #preloadIntroOverlay .preload-lock{ font-size:2.1rem; margin-bottom:.6rem; }
+    #preloadIntroOverlay .preload-title{
+      font-family:'Cormorant Garamond', serif;
+      font-weight:600; font-size:clamp(1.6rem,5vw,2.4rem);
+      margin:0 0 .5rem; letter-spacing:.02em;
+    }
+    #preloadIntroOverlay .preload-sub{
+      font-size:.95rem; opacity:.85; margin:0 0 1rem;
+    }
+    #preloadIntroOverlay .preload-builder{
+      font-size:.9rem; margin:0 0 1.4rem; opacity:.9;
+    }
+    #preloadIntroOverlay .preload-ssl{
+      font-size:.78rem; opacity:.75; margin:0 0 1.6rem;
+      display:flex; align-items:center; justify-content:center; gap:.35rem;
+    }
+    #preloadIntroOverlay .preload-countdown{
+      width:64px; height:64px; margin:0 auto;
+      display:flex; align-items:center; justify-content:center;
+      border-radius:50%; background:rgba(255,255,255,.55);
+      border:1px solid rgba(255,255,255,.8);
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.7rem; font-weight:600; color:#3d3350;
+      box-shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+  </style>
+
+  <div id="preloadIntroOverlay">
+    <div class="preload-intro-inner">
+      <div class="preload-lock">🔒</div>
+      <h1 class="preload-title">Website Under Construction</h1>
+      <p class="preload-sub">Currently under development</p>
+      <p class="preload-builder">Built by: <strong>Syed Akif Ali</strong></p>
+      <p class="preload-ssl">You are entering a secure webpage protected by SSL.</p>
+      <div class="preload-countdown" id="preloadCountdownNum">10</div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var count = 10;
+      var numEl = document.getElementById('preloadCountdownNum');
+      var overlay = document.getElementById('preloadIntroOverlay');
+      var prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+
+      var timer = setInterval(function(){
+        count -= 1;
+        if (count >= 0 && numEl) numEl.textContent = count;
+        if (count <= 0) {
+          clearInterval(timer);
+          overlay.classList.add('preload-hide');
+          document.body.style.overflow = prevOverflow;
+          setTimeout(function(){
+            if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
+          }, 650);
+        }
+      }, 1000);
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════
        NAVIGATION
        ═══════════════════════════════════════ -->
   <nav id="navbar">
@@ -194,7 +276,7 @@
       <a href="#about">About</a>
     </div>
     <hr/>
-    <p style="font-size:.78rem;opacity:.5">DESIGNED & DEVELOPED BY: IITian</p>
+    <p style="font-size:.78rem;opacity:.5">DESIGNED & DEVELOPED BY: SYED AKIF ALI <small>IIT Madras</small></p>
   </footer>
 
   <!-- ═══════════════════════════════════════
@@ -290,12 +372,5 @@
 
   <!-- PWA: register service worker for installability + offline support -->
  
-
-
-
-
-
-
-
 </body>
 </html>
