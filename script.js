@@ -45,10 +45,10 @@ function showToast(message) {
 /* ═══════════════════════════════════════════
    PRODUCT CATALOG
    ═══════════════════════════════════════════ */
-const CATEGORIES = ['Toys', 'Gifts', 'Bags', 'Home Decor', 'Accessories'];
+const CATEGORIES = ['Keychain', 'Gifts', 'Bags', 'Home Decor', 'Accessories'];
 
 const CAT_DESC = {
-  'Toys': 'Soft, huggable amigurumi friends crocheted by hand with hypoallergenic yarn — safe and snuggly for every age.',
+  'Keychain': 'Soft, huggable amigurumi friends crocheted by hand with hypoallergenic yarn — safe and snuggly for every age.',
   'Gifts': 'Thoughtful handmade gifts for birthdays, festivals, and everyday love — each one carries a little extra warmth.',
   'Bags': 'Durable, stylish crochet bags woven stitch by stitch — perfect for daily errands or a boho evening out.',
   'Home Decor': 'Bring cosy, handcrafted charm into your space with pieces made slowly, with intention and care.',
@@ -56,7 +56,7 @@ const CAT_DESC = {
 };
 
 const PRODUCT_NAMES = {
-  'Toys': ['Cuddly Bunny Amigurumi', 'Baby Elephant Plush', 'Rainbow Octopus Toy', 'Sleepy Sloth Buddy', 'Tiny Teddy Bear'],
+  'Keychain': ['Cuddly Bunny Amigurumi', 'Baby Elephant Plush', 'Rainbow Octopus Toy', 'Sleepy Sloth Buddy', 'Tiny Teddy Bear'],
   'Gifts': ['Personalized Name Keychain', 'Mini Flower Bouquet', 'Heart Charm Bracelet', 'Birthday Gift Basket', 'Crochet Coaster Set'],
   'Bags': ['Boho Tote Bag', 'Mini Sling Purse', 'Granny Square Tote', 'Market Basket Bag', 'Pastel Crossbody Bag'],
   'Home Decor': ['Macrame Wall Hanging', 'Boho Table Runner', 'Coaster Set of Four', 'Hanging Planter Basket', 'Doily Centerpiece'],
